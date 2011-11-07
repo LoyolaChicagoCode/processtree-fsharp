@@ -1,4 +1,4 @@
-module main
+module ProcessTree.MainNet
 
 open System
 open System.IO
