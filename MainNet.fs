@@ -27,7 +27,7 @@ let rec PrintTree l (i: int) =
         for k in tMap.[i] do PrintTree (l + 1) k
 
 let mutable line = Console.ReadLine()
-while (line <> null) do
+while line <> null do
     let words = line.Substring(0, iCmd).Split(ws, StringSplitOptions.RemoveEmptyEntries)
     let pid = Int32.Parse(words.[iPid])
     let ppid = Int32.Parse(words.[iPpid])

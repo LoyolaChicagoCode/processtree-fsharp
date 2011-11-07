@@ -13,7 +13,7 @@ let iCmd = Math.Max(header.IndexOf("CMD"), header.IndexOf("COMMAND"))
 
 let rec lines = seq {
     let line = Console.ReadLine()
-    if (line <> null) then yield line ; yield! lines
+    if line <> null then yield line ; yield! lines
 }
 
 let parse (line: string) =
@@ -33,7 +33,7 @@ let rec PrintTree l (i: int) =
     bOut.Write(cMap.[i])
     bOut.Write('\n')
     if tMap.ContainsKey(i) then
-        for (k, _, _) in tMap.[i] do PrintTree (l + 1) k
+        for k, _, _ in tMap.[i] do PrintTree (l + 1) k
 
-for (k, _, _) in tMap.[0] do PrintTree 0 k
+for k, _, _ in tMap.[0] do PrintTree 0 k
 bOut.Flush()
